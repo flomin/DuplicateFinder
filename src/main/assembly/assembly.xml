@@ -1,0 +1,40 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+	<id>swt</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<useProjectArtifact>true</useProjectArtifact>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>org.eclipse:swt*</exclude>
+				<exclude>org.apache.lucene:lucene-core</exclude>
+				<exclude>org.apache.lucene:lucene-sandbox</exclude>
+				<exclude>net.semanticmetadata:lire</exclude>
+			</excludes>
+		</dependencySet>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<includes>
+				<include>org.apache.lucene:lucene-core</include>
+				<include>org.apache.lucene:lucene-sandbox</include>
+				<include>net.semanticmetadata:lire</include>
+			</includes>
+			<unpackOptions>
+				<excludes>
+					<exclude>**/org.apache.lucene.codecs.Codec</exclude>
+					<exclude>**/org.apache.lucene.codecs.PostingsFormat</exclude>					
+				</excludes>
+			</unpackOptions>
+		</dependencySet>
+	</dependencySets>
+</assembly>

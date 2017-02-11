@@ -1,0 +1,2 @@
+net.semanticmetadata.lire.indexers.LireCustomCodec
+org.apache.lucene.codecs.lucene62.Lucene62Codec
